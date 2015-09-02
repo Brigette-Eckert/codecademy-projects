@@ -1,0 +1,1 @@
+basic accordian folder, built while learning jQuery.
