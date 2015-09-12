@@ -1,6 +1,8 @@
-app.controller('ChapterController', ['$scope', '$books', '$routeParams', function($scope, books, $routeParams) {
+app.controller('ChapterController', ['$scope', '$books', '$routeParams', function($scope, $books, $routeParams) {
   $books.success(function(data) {
-    // Your code here
+    $scope.book = data[$routeParams.bookId];
+    $scope.chapter = $scope.book.chapters[$routeParams.chapterId];
+
 
 
 
@@ -14,4 +16,5 @@ app.controller('ChapterController', ['$scope', '$books', '$routeParams', functio
   $scope.currentBookIndex = parseInt($routeParams.bookId);
   $scope.currentChapterIndex = parseInt($routeParams.chapterId);
   $scope.nextChapterIndex = $scope.currentChapterIndex + 1;
+  $scope.previousChapterIndex = $scope.currentChapterIndex-1;
 }]);

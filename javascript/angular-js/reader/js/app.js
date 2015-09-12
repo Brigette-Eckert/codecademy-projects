@@ -13,6 +13,11 @@ app.config(function($routeProvider){
 			templateUrl: 'views/book.html'
 		})
 
+		.when('/books/:bookId/chapters/:chapterId', {
+			controller: 'ChapterController' ,
+			templateUrl: 'views/chapter.html'
+		})
+
 		.otherwise({
 			redirectTo: '/'
 		});
